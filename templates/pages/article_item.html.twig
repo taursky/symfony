@@ -1,0 +1,86 @@
+{% extends 'layouts/main.html.twig' %}
+
+{% block title %} {{ article.title }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {# image #}
+                <h1>{{ article.title }}</h1> <br>
+            </div>
+        </div>
+        <div class="content_line"></div>
+
+        <div class="post-info">
+            <div class="bl_info">
+
+                <i class="fa fa-folder-open" aria-hidden="true"></i>
+
+                <span class="post-info-category">Категория: <a class="trans"
+                                                               href="#">{{ article.category.name }}</a></span>
+
+                &nbsp;&nbsp;<i class="fa fa-tags" aria-hidden="true"></i>
+                <span class="post-info-tags">
+                    {% for tag in article.tags %}
+                        <a class="trans" href="#"> {{tag.name}} </a>
+                    {% endfor %}
+                </span>
+            </div>
+        </div>
+
+        <div class="text-justify post-item-content">
+            {% if article.image %}
+                <img src="" style="float:left;margin-right:15px;margin-bottom:15px">
+            {% else %}
+                <img src="{{ asset('build/images/style/post_no_image.png') }}"
+                     style="float:left;margin-right:15px;margin-bottom:15px">
+            {% endif %}
+
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.text | raw }}</p>
+            {# @if($demo_item) #}
+            {# <p>Результат можно посмотреть на <a href="№" target="_blank">этой странице</a> </p> #}
+            {# @endif #}
+            {# <br> #}
+
+            <div class="post-meta float-right">
+                <span class="post-meta-author">Автор: Сергей</span>
+                <span class="post-meta-date">Дата публикации:
+                    {{ article.createDate | date('d.m.Y') }}
+                </span>
+            </div>
+
+        </div>
+        <div class="clear_20"></div>
+        <div class="content_line"></div>
+        <div class="clear_20"></div>
+
+        {# <div class="moreposts"> #}
+        {# @php #}
+        {# $another_posts = \App\Post::where(['status' => 1, 'class_id' => $post->class_id, ['id','!=', $post->id]])->count(); #}
+        {# @endphp #}
+        {# @if($another_posts >0) #}
+        {# @php #}
+        {# $more_posts = \App\Post::where(['status' => 1, 'class_id' => $post->class_id, ['id','!=', $post->id]])->orderBy('created_date', 'desc')->limit(5)->get(); #}
+        {# @endphp #}
+        {# <p>Другие статьи:</p> #}
+        {# <ul> #}
+        {# @foreach($more_posts as $more_post) #}
+        {# @php #}
+        {# $more_posts_first_link = \App\TypeMain::where('id', $more_post->class_id)->value('link'); #}
+        {# @endphp #}
+        {# <li> #}
+        {# <i class="fa fa-forward"></i> #}
+        {# <a href="/post/{{$more_posts_first_link}}/{{$more_post->link}}">{{$more_post->title}}</a> #}
+        {# </li> #}
+        {# @endforeach #}
+
+        {# </ul> #}
+        {# @endif #}
+        {# </div> #}
+
+
+    </div>
+{% endblock %}

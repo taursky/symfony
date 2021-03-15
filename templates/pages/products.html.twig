@@ -1,0 +1,14 @@
+{% extends 'layouts/main.html.twig' %}
+
+{% block title %}{{ category.parent.name }} {{ category.name }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        {% if category.parent is  defined %}
+        <h1>{{ category.parent.name }} {{ category.name }}</h1>
+
+        {{ dump(category) }}
+        {% endif %}
+    </div>
+{% endblock %}

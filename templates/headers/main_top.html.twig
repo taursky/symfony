@@ -1,0 +1,44 @@
+<div class="header-limiter bg-transparent text-dark">
+    <div class="container">
+        <div class="head-inner row">
+            <div class="col-lg-12 header-bg">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-12">
+                        <a href="{{ path('main') }}">
+                            <img class="mainlogo" src="{{ asset('build/images/style/logo_1.png') }}" style="max-height: 100px">
+                            <h3 class="main-name">{{ app.request.server.get('APP_NAME') }}</h3>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+{#                        <form action="/search" id="mainsearch" method="post">#}
+{#                            <div id="custom-search-input">#}
+{#                                <div class="input-group">#}
+{#                                    <input type="text" name="searchfull" class="search-query form-control" placeholder="поиск по сайту">#}
+{#                                    <span class="input-group-btn">#}
+{#                                        <button class="btn btn-danger" type="submit" form="mainsearch">#}
+{#                                            <span class=" fa fa-search"></span>#}
+{#                                        </button>#}
+{#                                    </span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </form>#}
+                    </div>
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="headcontacts">
+                            <p class="clearfix">
+                                <span class="headcontact-entry-name">Тел: </span>
+                                <span class="footer_tel headcontact-entry-value"> +7(914) 791-43-93 </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="headcontact-entry-name"> E-mail: </span>
+                                <span class="headcontact-entry-value heademail-value">
+                                    <a href="#"> taursky@yandex.ru </a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
